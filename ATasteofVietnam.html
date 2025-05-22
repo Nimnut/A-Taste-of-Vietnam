@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A Taste of Vietnam - Tel. 780-416-4436 56, 975 Broadmoor Blvd, Sherwood Park.">
+    <link rel="stylesheet" href="style.css" />
+    <title>A Taste of Vietnam</title>
+
+</head>
+
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section id="home">
+
+        <img style="float: right;" src="images/drawing.svg" alt="">
+    </section>
+
+    <section id="menu">
+        <h1 class="centerh">Menu</h1>
+
+        <div class="menu-grid">
+            <div onclick="showOnly('Appetizers')" class="menu-card1">
+                <h3>Appetizers</h3>
+            </div>
+
+            <div class="menu-card2">
+                <h3>Mains</h3>
+                <div class="dropdown-container">
+                    <ul id="dropdown" class="dropdown-menu">
+                        <li onclick="showOnly('1')">Vermicelli Entrees</li>
+                        <li onclick="showOnly('2')">Vietnamese Beef Noodle Soups</li>
+                        <li onclick="showOnly('3')">Grilled Dishes</li>
+                        <li onclick="showOnly('4')">Vietnamese Stewed Soups</li>
+                        <li onclick="showOnly('5')">Rice Dishes</li>
+                        <li onclick="showOnly('6')">Egg & Rice Noodle Soups</li>
+                        <li onclick="showOnly('7')">Stir Fried Noodles & Vegetables</li>
+                        <li onclick="showOnly('8')">Sweet & Sour Soups</li>
+                        <li onclick="showOnly('9')">Sizzling Platters</li>
+                        <li onclick="showOnly('10')">Stir Fried Dishes</li>
+                        <li onclick="showOnly('11')">Sides</li>
+                        <li onclick="showOnly('12')">Beverages</li>
+                        <li onclick="showOnly('13')">Alcoholic Beverages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div onclick="showOnly('Beverages')" class="menu-card3">
+                <h3>Beverages</h3>
+            </div>
+        </div>
+
+        <div class="menutoggle">
+            <div id="Appetizers" class="toggledmenu-wrapper">
+                <div class="toggledmenu">bleee</div>
+            </div>
+            <div id="Mains" class="toggledmenu-wrapper">
+                <div class="toggledmenu">woah</div>
+            </div>
+            <div id="Beverages" class="toggledmenu-wrapper">
+                <div class="toggledmenu">hiii</div>
+            </div>
+
+            <!-- NEW dropdown menu toggles -->
+            <div id="1" class="toggledmenu-wrapper">
+                <div class="toggledmenu">1</div>
+            </div>
+            <div id="2" class="toggledmenu-wrapper">
+                <div class="toggledmenu">2</div>
+            </div>
+            <div id="3" class="toggledmenu-wrapper">
+                <div class="toggledmenu">3</div>
+            </div>
+            <div id="4" class="toggledmenu-wrapper">
+                <div class="toggledmenu">4</div>
+            </div>
+            <div id="5" class="toggledmenu-wrapper">
+                <div class="toggledmenu">5</div>
+            </div>
+            <div id="6" class="toggledmenu-wrapper">
+                <div class="toggledmenu">6</div>
+            </div>
+            <div id="7" class="toggledmenu-wrapper">
+                <div class="toggledmenu">7</div>
+            </div>
+            <div id="8" class="toggledmenu-wrapper">
+                <div class="toggledmenu">8</div>
+            </div>
+            <div id="9" class="toggledmenu-wrapper">
+                <div class="toggledmenu">9</div>
+            </div>
+            <div id="10" class="toggledmenu-wrapper">
+                <div class="toggledmenu">10</div>
+            </div>
+            <div id="11" class="toggledmenu-wrapper">
+                <div class="toggledmenu">11</div>
+            </div>
+            <div id="12" class="toggledmenu-wrapper">
+                <div class="toggledmenu">12</div>
+            </div>
+            <div id="13" class="toggledmenu-wrapper">
+                <div class="toggledmenu">13</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="centerh">Location and Hours</h2>
+
+        <div class="contactcontent">
+            <div class="map">
+                <iframe id="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.9803054596377!2d-113.32519228706609!3d53.54026587223087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a017d69caa6031%3A0xcb4b46a4a9d31f9a!2sA%20Taste%20of%20Vietnam!5e0!3m2!1sen!2sca!4v1745865976573!5m2!1sen!2sca"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div class="info">
+                <p>
+                    <br>
+                <h3>Hours</h3>
+                Monday to Saturday – 11 a.m. - 9 p.m.<br>
+                Sunday – Closed<br><br>
+                <h3>Location</h3>
+                56, 975 Broadmoor Blvd, Sherwood Park, AB T8A 5W9<br><br>
+                <h3>Phone Number</h3>
+                (780) 416-4436
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentlyShown = null;
+        let hideTimeout = null;
+        let showTimeout = null;
+
+        function showOnly(sectionId) {
+            const newSection = document.getElementById(sectionId);
+
+            // Cancel any ongoing animations
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
+            if (showTimeout) {
+                clearTimeout(showTimeout);
+                showTimeout = null;
+            }
+
+            // Hide currently shown section if needed
+            if (currentlyShown && currentlyShown !== sectionId) {
+                const current = document.getElementById(currentlyShown);
+                current.classList.remove("show");
+                current.classList.add("hide");
+
+                hideTimeout = setTimeout(() => {
+                    current.classList.remove("hide");
+                    current.style.display = "none";
+                    revealNewSection();
+                }, 400);
+            } else if (currentlyShown === sectionId) {
+                // If clicking the same section, hide it
+                const current = document.getElementById(currentlyShown);
+                current.classList.remove("show");
+                current.classList.add("hide");
+
+                hideTimeout = setTimeout(() => {
+                    current.classList.remove("hide");
+                    current.style.display = "none";
+                    currentlyShown = null;
+                }, 400);
+            } else {
+                // No section is currently shown, so just reveal the new one
+                revealNewSection();
+            }
+
+            function revealNewSection() {
+                newSection.style.display = "block";
+                showTimeout = setTimeout(() => {
+                    newSection.classList.add("show");
+                    currentlyShown = sectionId;
+                }, 10); // a short delay to allow `display: block` to apply
+            }
+        }
+    </script>
+
+</body>
+
+</html>

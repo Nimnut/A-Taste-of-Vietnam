@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="210mm"
+   viewBox="0 0 210 210"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="drawing.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0621131"
+     inkscape:cx="396.85039"
+     inkscape:cy="396.85039"
+     inkscape:window-width="1920"
+     inkscape:window-height="1044"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1">
+    <rect
+       x="220.31552"
+       y="356.83582"
+       width="349.30365"
+       height="83.795217"
+       id="rect2" />
+    <rect
+       x="-180.85938"
+       y="823.24219"
+       width="138.28126"
+       height="27.539061"
+       id="rect4" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath10">
+      <g
+         id="use10"
+         transform="matrix(1,0,0,0.91687148,0,12.915385)">
+        <ellipse
+           style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0.24668"
+           id="ellipse1"
+           cx="105.72677"
+           cy="105.47897"
+           rx="104.03124"
+           ry="49.887505" />
+      </g>
+    </clipPath>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.1;fill-opacity:1;stroke-opacity:1"
+       id="path2"
+       cx="105.62277"
+       cy="102.88256"
+       rx="79.466194"
+       ry="39.110317" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,0,-0.99644128)"
+       id="text2"
+       style="font-size:20px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2);display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.377953;stroke-opacity:1"><tspan
+         x="220.31641"
+         y="415.82034"
+         id="tspan3"><tspan
+           style="font-size:66.6667px"
+           id="tspan1">Logo haha</tspan></tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: none;
+    color: none;
+    display: flex;
+    padding: 16px;
+    z-index: 1000;
+}
+
+nav a {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #444;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2.5px;
+    width: 0;
+    background-color: #444;
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+
+#menu {
+    background-color: #e6e6e6;
+    height: fit-content;
+}
+
+#home {
+    background-color: #f2f2f2;
+}
+
+#contact {
+    background-color: #cccccc;
+}
+
+.contactcontent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+    width: 400px;
+    height: 350px;
+}
+
+.map {
+    margin: 20px;
+    padding: 32px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    margin: 155px 20px;
+    text-align: center;
+}
+
+.centerh {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-grid {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.menu-card1,
+.menu-card3 {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 520px;
+    height: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertical center */
+    align-items: center;
+    /* horizontal center */
+    transition: box-shadow 0.3s ease;
+}
+
+.menu-card2 {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 520px;
+    min-height: 120px;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertical center */
+    align-items: center;
+    /* horizontal center */
+    transition: box-shadow 0.3s ease;
+}
+
+.menu-card2:hover,
+.menu-card1:hover,
+.menu-card3:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.centerh {
+    text-align: center;
+}
+
+/* Dropdown menu */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    padding: 0;
+    margin: 5px 0 0;
+    list-style: none;
+    width: fit-content;
+    /* wider to fit columns */
+    column-count: 3;
+    /* split into 2 columns */
+    column-gap: 20px;
+    /* space between columns */
+    z-index: 10;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    break-inside: avoid;
+    /* prevent splitting items */
+}
+
+.dropdown-menu li:hover {
+    background-color: #eee;
+}
+
+.menu-card2:hover .dropdown-menu {
+    display: block;
+}
+
+/* Toggle section */
+.menutoggle {
+    margin: 20px;
+}
+
+.toggledmenu-wrapper {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.toggledmenu-wrapper.show {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.toggledmenu-wrapper.hide {
+    animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+.toggledmenu {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
