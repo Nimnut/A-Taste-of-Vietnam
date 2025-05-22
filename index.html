@@ -8,6 +8,282 @@
     <link rel="stylesheet" href="style.css" />
     <title>A Taste of Vietnam</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: none;
+            color: none;
+            display: flex;
+            padding: 16px;
+            z-index: 1000;
+        }
+
+        nav a {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #444;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 2.5px;
+            width: 0;
+            background-color: #444;
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
+
+        #menu {
+            background-color: #e6e6e6;
+        }
+
+        #home {
+            background-color: #f2f2f2;
+        }
+
+        #contact {
+            background-color: #cccccc;
+        }
+
+        .contactcontent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #map {
+            width: 400px;
+            height: 350px;
+        }
+
+        .map {
+            margin: 20px;
+            padding: 32px;
+            width: fit-content;
+            height: fit-content;
+            background-color: #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .info {
+            margin: 155px 20px;
+            text-align: center;
+        }
+
+        .centerh {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .menu-grid {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .menu-card1,
+        .menu-card3,
+        .menu-card2 {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            width: 520px;
+            min-height: 120px;
+            height: fit-content;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+            margin: 10px;
+        }
+
+        .menu-card2:hover,
+        .menu-card1:hover,
+        .menu-card3:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            padding: 0;
+            margin: 5px 0 0;
+            list-style: none;
+            width: fit-content;
+            column-count: 3;
+            column-gap: 20px;
+            z-index: 10;
+        }
+
+        .dropdown-menu li {
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            break-inside: avoid;
+        }
+
+        .dropdown-menu li:hover {
+            background-color: #eee;
+        }
+
+        .menu-card2:hover .dropdown-menu {
+            display: block;
+        }
+
+        .menutoggle {
+            margin: 20px;
+        }
+
+        .toggledmenu-wrapper {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .toggledmenu-wrapper.show {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .toggledmenu-wrapper.hide {
+            animation: fadeOut 0.4s ease-in-out forwards;
+        }
+
+        .toggledmenu {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+        }
+
+        /* ---------------- MOBILE ---------------- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+
+            .menu-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-card1,
+            .menu-card2,
+            .menu-card3 {
+                width: 90%;
+                height: auto;
+                margin: 10px 0;
+                padding: 16px;
+            }
+
+            .dropdown-menu {
+                column-count: 1;
+                width: 100%;
+                display: none !important;
+            }
+
+            #map {
+                width: 90vw;
+                height: 250px;
+            }
+
+            .contactcontent {
+                flex-direction: column;
+            }
+
+            .info {
+                margin: 20px;
+            }
+
+            section {
+                padding: 80px 10px;
+            }
+
+            img[style*="float: right;"] {
+                float: none !important;
+                display: block;
+                margin: 0 auto;
+                width: 90%;
+                height: auto;
+            }
+
+            .menu-card2:hover .dropdown-menu {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,7 +294,6 @@
     </nav>
 
     <section id="home">
-
         <img style="float: right;" src="images/drawing.svg" alt="">
     </section>
 
@@ -30,7 +305,7 @@
                 <h3>Appetizers</h3>
             </div>
 
-            <div class="menu-card2">
+            <div class="menu-card2" id="mainMenuCard">
                 <h3>Mains</h3>
                 <div class="dropdown-container">
                     <ul id="dropdown" class="dropdown-menu">
@@ -57,62 +332,27 @@
         </div>
 
         <div class="menutoggle">
-            <div id="Appetizers" class="toggledmenu-wrapper">
-                <div class="toggledmenu">bleee</div>
-            </div>
-            <div id="Mains" class="toggledmenu-wrapper">
-                <div class="toggledmenu">woah</div>
-            </div>
-            <div id="Beverages" class="toggledmenu-wrapper">
-                <div class="toggledmenu">hiii</div>
-            </div>
-
-            <!-- NEW dropdown menu toggles -->
-            <div id="1" class="toggledmenu-wrapper">
-                <div class="toggledmenu">1</div>
-            </div>
-            <div id="2" class="toggledmenu-wrapper">
-                <div class="toggledmenu">2</div>
-            </div>
-            <div id="3" class="toggledmenu-wrapper">
-                <div class="toggledmenu">3</div>
-            </div>
-            <div id="4" class="toggledmenu-wrapper">
-                <div class="toggledmenu">4</div>
-            </div>
-            <div id="5" class="toggledmenu-wrapper">
-                <div class="toggledmenu">5</div>
-            </div>
-            <div id="6" class="toggledmenu-wrapper">
-                <div class="toggledmenu">6</div>
-            </div>
-            <div id="7" class="toggledmenu-wrapper">
-                <div class="toggledmenu">7</div>
-            </div>
-            <div id="8" class="toggledmenu-wrapper">
-                <div class="toggledmenu">8</div>
-            </div>
-            <div id="9" class="toggledmenu-wrapper">
-                <div class="toggledmenu">9</div>
-            </div>
-            <div id="10" class="toggledmenu-wrapper">
-                <div class="toggledmenu">10</div>
-            </div>
-            <div id="11" class="toggledmenu-wrapper">
-                <div class="toggledmenu">11</div>
-            </div>
-            <div id="12" class="toggledmenu-wrapper">
-                <div class="toggledmenu">12</div>
-            </div>
-            <div id="13" class="toggledmenu-wrapper">
-                <div class="toggledmenu">13</div>
-            </div>
+            <div id="Appetizers" class="toggledmenu-wrapper"><div class="toggledmenu">bleee</div></div>
+            <div id="Mains" class="toggledmenu-wrapper"><div class="toggledmenu">woah</div></div>
+            <div id="Beverages" class="toggledmenu-wrapper"><div class="toggledmenu">hiii</div></div>
+            <div id="1" class="toggledmenu-wrapper"><div class="toggledmenu">1</div></div>
+            <div id="2" class="toggledmenu-wrapper"><div class="toggledmenu">2</div></div>
+            <div id="3" class="toggledmenu-wrapper"><div class="toggledmenu">3</div></div>
+            <div id="4" class="toggledmenu-wrapper"><div class="toggledmenu">4</div></div>
+            <div id="5" class="toggledmenu-wrapper"><div class="toggledmenu">5</div></div>
+            <div id="6" class="toggledmenu-wrapper"><div class="toggledmenu">6</div></div>
+            <div id="7" class="toggledmenu-wrapper"><div class="toggledmenu">7</div></div>
+            <div id="8" class="toggledmenu-wrapper"><div class="toggledmenu">8</div></div>
+            <div id="9" class="toggledmenu-wrapper"><div class="toggledmenu">9</div></div>
+            <div id="10" class="toggledmenu-wrapper"><div class="toggledmenu">10</div></div>
+            <div id="11" class="toggledmenu-wrapper"><div class="toggledmenu">11</div></div>
+            <div id="12" class="toggledmenu-wrapper"><div class="toggledmenu">12</div></div>
+            <div id="13" class="toggledmenu-wrapper"><div class="toggledmenu">13</div></div>
         </div>
     </section>
 
     <section id="contact">
         <h2 class="centerh">Location and Hours</h2>
-
         <div class="contactcontent">
             <div class="map">
                 <iframe id="map"
@@ -122,8 +362,6 @@
             </div>
 
             <div class="info">
-                <p>
-                    <br>
                 <h3>Hours</h3>
                 Monday to Saturday – 11 a.m. - 9 p.m.<br>
                 Sunday – Closed<br><br>
@@ -131,7 +369,6 @@
                 56, 975 Broadmoor Blvd, Sherwood Park, AB T8A 5W9<br><br>
                 <h3>Phone Number</h3>
                 (780) 416-4436
-                </p>
             </div>
         </div>
     </section>
@@ -144,17 +381,9 @@
         function showOnly(sectionId) {
             const newSection = document.getElementById(sectionId);
 
-            // Cancel any ongoing animations
-            if (hideTimeout) {
-                clearTimeout(hideTimeout);
-                hideTimeout = null;
-            }
-            if (showTimeout) {
-                clearTimeout(showTimeout);
-                showTimeout = null;
-            }
+            if (hideTimeout) clearTimeout(hideTimeout);
+            if (showTimeout) clearTimeout(showTimeout);
 
-            // Hide currently shown section if needed
             if (currentlyShown && currentlyShown !== sectionId) {
                 const current = document.getElementById(currentlyShown);
                 current.classList.remove("show");
@@ -166,7 +395,6 @@
                     revealNewSection();
                 }, 400);
             } else if (currentlyShown === sectionId) {
-                // If clicking the same section, hide it
                 const current = document.getElementById(currentlyShown);
                 current.classList.remove("show");
                 current.classList.add("hide");
@@ -177,7 +405,6 @@
                     currentlyShown = null;
                 }, 400);
             } else {
-                // No section is currently shown, so just reveal the new one
                 revealNewSection();
             }
 
@@ -186,11 +413,18 @@
                 showTimeout = setTimeout(() => {
                     newSection.classList.add("show");
                     currentlyShown = sectionId;
-                }, 10); // a short delay to allow `display: block` to apply
+                }, 10);
             }
         }
-    </script>
 
+        // Enable dropdown toggle on click for mobile
+        document.getElementById("mainMenuCard").addEventListener("click", () => {
+            const dropdown = document.getElementById("dropdown");
+            if (window.innerWidth <= 768) {
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            }
+        });
+    </script>
 </body>
 
 </html>
